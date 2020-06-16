@@ -1,10 +1,9 @@
-let DEFAULT_SALARY = 1000;
+var DEFAULT_SALARY = 1000;
 
 function Employee(name, grade, department, salary) {
     this.name = name;
     this.grade = grade;
     this.department = department;
-
     this.salary = salary || 0;
 }
 
@@ -12,15 +11,22 @@ function Employee(name, grade, department, salary) {
 Employee.prototype.getName = function() {
     return this.name;
 };
+
 Employee.prototype.getDepartment = function() {
     return this.department;
 };
+
 Employee.prototype.getGrade = function() {
     return this.grade;
 };
+
 Employee.prototype.getSalary = function() {
+    if (!this.salary) {
+        this.salary = this.calculateSalary();
+    }
     return this.salary;
-};
+}
+
 Employee.prototype.calculateSalary = function() {
     return this.grade * DEFAULT_SALARY;
 };

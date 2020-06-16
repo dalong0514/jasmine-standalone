@@ -3,6 +3,7 @@ describe('Jasmine Spy', () => {
         let alice = new Employee('Alice', 4, 'Testing');
         spyOn(alice, 'calculateSalary');
         console.log(alice.getDetails());
-        expect(alice.calculateSalary).toHaveBeenCalled();
+        // expect(alice.calculateSalary).toHaveBeenCalled();
+        expect(alice.calculateSalary).toHaveBeenCalledWith(5);
     });
 });

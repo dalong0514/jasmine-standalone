@@ -17,6 +17,9 @@ class Province {
     get producers() {
         return this._producers.slice();
     }
+    get totalProduction() {
+        return this._totalProduction;
+    }
     set totalProduction(arg) {
         this._totalProduction = arg;
     }
